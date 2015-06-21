@@ -1,0 +1,47 @@
+=========================
+ How to install TM-align
+=========================
+to compile the program in your Linux computer, simply enter
+
+ make
+
+or
+
+ g++ -static -O3 -ffast-math -lm -o TMalign TMalign.cpp
+
+
+
+=====================
+ How to use TM-align
+=====================
+you can run the program without arguments to obtain a brief instruction
+
+ ./TMalign
+
+
+
+====================
+ About this program
+====================
+This program is an implementation of TM-align in C/C++ (V20120126) by
+
+ Jianyi Yang at the
+ Yang Zhang lab
+ Center for Computational Medicine and Bioinformatics 
+ University of Michigan 
+ 100 Washtenaw Avenue, Ann Arbor, MI 48109-2218                                                        
+           
+Please report bugs and questions to yangji@umich.edu or zhng@umich.edu
+
+
+
+===================
+ Fortran version
+===================
+You can download the fortran version of TM-align from
+http://zhanglab.ccmb.med.umich.edu/TM-align/
+
+
+
+01/26/2012
+

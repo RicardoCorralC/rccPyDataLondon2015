@@ -1,0 +1,39 @@
+
+ *****************************************************************************
+ * TM-align (Version 20120126): A protein structural alignment algorithm     *
+ * Reference: Y Zhang and J Skolnick, Nucl Acids Res 33, 2302-9 (2005)       *
+ * Please email your comments and suggestions to Yang Zhang (zhng@umich.edu) *
+ *****************************************************************************
+
+Name of structure A: TMalignc/PDB1.pdb
+Name of structure B: TMalignc/PDB2.pdb (to be superimposed onto structure A)
+Length of structure A: 1015 residues
+Length of structure B: 1014 residues
+
+Aligned length=847, RMSD=  4.22, Seq_ID=n_identical/n_aligned=0.630
+
+TM-score=0.74499 (if normalized by length of structure B, i.e., LN=1014, d0=10.60)
+TM-score=0.74431 (if normalized by length of structure A, i.e., LN=1015, d0=10.60)
+(You should use TM-score normalized by length of the reference protein)
+
+----- The rotation matrix to rotate Structure B to Structure A -----
+i	              t[i]         u[i][0]         u[i][1]         u[i][2]
+0	      2.1725703196    0.2948896973   -0.3127088739   -0.9029137426
+1	     31.6795090841   -0.9400155324    0.0746548635   -0.3328625094
+2	    -67.5334330520    0.1714959627    0.9469106671   -0.2719362485
+
+Code for rotating Structure B from (x,y,z) to (X,Y,Z):
+for(k=0; k<L; k++)
+{
+   X[k] = t[0] + u[0][0]*x[k] + u[0][1]*y[k] + u[0][2]*z[k]
+   Y[k] = t[1] + u[1][0]*x[k] + u[1][1]*y[k] + u[1][2]*z[k]
+   Z[k] = t[2] + u[2][0]*x[k] + u[2][1]*y[k] + u[2][2]*z[k]
+}
+
+(":" denotes residue pairs of d <  5.0 Angstrom, "." denotes other aligned residues)
+CQDVVQDVPNVDVQMLELYDRMSFKDIDGGVWKQGWNIKYDPLKY---------------------------------------------NAHHKLKVFVVPHSHNDPGWIQTFEEYYQHDTKHILSNALRHLHDNPEM-KFIWAEISYFARFYHDLGENKKLQMKSIVKNGQLEFVTGGWVMPDEANSHWRNVLLQLTEGQTWLKQFMNVTPTASWAIDPFGHSPTMPYILQKSGFKNMLIQRTHYSVKKELAQQR------QLEFLWRQIWDNKGDTALFTHMMPFYSYDIPHTCGPDPKVCCQFDF----------------KRMGSFGLSCPWKVPPRTISDQNVAARSDLLVDQWKKKAELYRTNVLLIPLGDDFRFKQNTEWDVQRVNYERLFEHINSQAHFNVQAQFGTLQEYFDAVHQAERAGQAEFPTLSGDFFTYADRSDNYWSGYYTSRPYHKRMDRVLMHYVR-AAEMLSAWHSWDGMARIEERLEQARRELSLFQHHDGITGTAKTHVVVDYEQRMQEALKACQMVMQQSVYRLLTKPSIYSPDFSFSYFTLDDSRWPGSGVEDSRTTIILGEDI---LPSKHVVMHNTLPHWREQLVDFYV----------------------S-----S----PFVSVTDLANNPVEAQVSPVWSWHHDTLTKTIHPQGST------------------TKYRIIFKARVPPMGLATYVLTISDSKPEHTSYASNLLLRKNPTSLPLGQYPEDVKFGDPREISLRVGNGPTLAFSEQGLLKSIQLTQDSPHVPVHFKFLKYGVRSHGDRSGAYLFLPN--GPASPVELGQPVVLV-TKGKLESSVSVGL------------------------------PSVVHQTIMR-GGAPEIRNLVDIGSLDNTEIVMRLETHIDSGDIFYTDLNG-LQFIKRRRLDKLPLQANYYPIPSGMFIEDANTRLTLLTGQPLGGSSLASGELEIMQDRRLASDDERG-LGQG-VLDNKPVLHIYRLVLEKVNNCVRPSKLHPAG----YLTSAAHKASQSLLDPLDKFIFAENEWIGA-QGQFGGDHPSARE-DLDVSVMRRLTKSSAKTQRVGYVLHRTNLMQCGTPEEHTQKLDVCHLL-P--NVARCERTTLTFLQNLEHLDGMVAPEVCPMETAAYVSSH-S
+                                                                                          ..:::::::::::::::::::::::::.::::::::::::::::::::: ::::::::::::::..::. ::::::::::::::::..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.  ::.......      .:.:::::: :  : ::::::::::..:.::....                           ..:::::....   .:::..  .:..::.::::::::::::::::::::::::::::...::..:.::::::::::::::..::::::::::::::::::::::::..:::::::::::.....:::::::::::::::::::::::::: :::::::::.... ..::::::::::::::::::::::::::::::::::::::::::::::::::::::::::....                                     ....:::::::::::::::::::.                      .     .    ..::::::::::::::....                                    ....::::::::::::::::::..  .:: ::::::: :                      :::::: ::::::::::::::::::: .:.:::.:::::::::     ::::::::::  :.::::.:::::::: :::::::::::.:                              :::::::::: :::::::::::::: ::::::::::::::: ::::::.:: :::::::::..::..::::::::::::::.::::::::::::::::::::::::::::::::::::. :::: ::::::::::::::::::.....            ....::::::::::::.::........... ..:.::.:::::: :::::::::::.. ::.:::::::::::..... .....::.::..:. .  ....:.::::::.::..... .....:::::::::::.. .
+---------------------------------------------CQDVVQDVPNVDVQMLELYDRMSFKDIDGGVWKQGWNIKYDPLKYNAHHKLKVFVVPHSHNDPGWIQTFEEYYQHDTKHILSNALRHLHDNPEMKFIWAEISYFARFYHDLGEN-KKLQMKSIVKNGQLEFVTGGWVMPDEANSHWRNVLLQLTEGQTWLKQFMNVTPTASWAIDPFGHSPTMPYILQKSGFKNMLIQRTH--YSVKKELAQQRQLEFLWRQIWDNK-G--D-TALFTHMMPFYSYDIPHTCG-----------PDPKVCCQFDFKRMGSFGLSCPWKVPP---RTISDQ--NVAARSDLLVDQWKKKAELYRTNVLLIPLGDDFRFKQNTEWDVQRVNYERLFEHINSQAHFNVQAQFGTLQEYFDAVHQAERAGQAEFPTLSGDFFTYADRSDNYWSGYYTSRPYHKRMDRVLMHYVRAAEMLSAWHSWDGM-ARIEERLEQARRELSLFQHHDGITGTAKTHVVVDYEQRMQEALKACQMVMQQSVYRLLTKPSIY----------------------------------SPDFSFSYFTLDDSRWPGSGVEDSRTTIILGEDILPSKHVVMHNTLPHWREQLVDFYVSSPFVSVTDLANNPVEAQVSPV------------------WSWHHDTLTKTIHPQGSTTKYRIIFKARVPPMGLATYVLTIS--DSK-PEHTSYA-S----------------------NLLLRK-NPTSLPLGQYPEDVKFGDP-REISLRVGNGPTLAFS-----EQGLLKSIQLTQDSPHVPVHFKFLKYGVRSHGDRSGAYLFLPNGPASPVELGQPVVLVTKGKLESSVSVGLPSVVHQTIMRGGAPEIRNLVDIGSL-DNTEIVMRLETHIDS-GDIFYTDLNGLQFIKRRRLDKLPLQANYYPIPSGMFIEDANTRLTLLTGQPLGGSSLASGELEIMQDRRLASDDERGLGQGVLDNKPVLHIYRLVLEKVNNCVRPS--------KLHPAGYLTSAAHKASQSLLDPLDKFIFAENEWIGAQGQFGGDHPSAREDLDVSVMRRLTKS-SAKTQRVGYVLHRTNLMQC-GTPEEHTQKLDVCHLLPNVARCERTTLTFLQNLEHLDG-MVAPEVCPMETAAYVSSHSS
+
+
+Total running time is  8.62 seconds
