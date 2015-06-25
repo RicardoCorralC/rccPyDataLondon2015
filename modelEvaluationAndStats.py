@@ -100,9 +100,15 @@ def report(grid_scores, n_top=3):
         print("")
 
 
-def makeRandomCV(dataset,dbtype='CATH',level=1,k_iters=10,clf = ExtraTreesClassifier(n_estimators=5,class_weight='auto')):
+def makeRandomCV(dataset,dbtype='CATH',
+                level=1,
+                k_iters=10,
+                minsamples=500,
+                clf = ExtraTreesClassifier(n_estimators=5,class_weight='auto')):
+
     from scipy.stats import randint as sp_randint
-    dataDict = dbParser(dataset,level=level,dbtype=dbtype)
+    
+    dataDict = dbParser(dataset,level=level,dbtype=dbtype,minsamples=minsamples)
     print dataDict
 
     labels = dataDict['target_names']
